@@ -1,0 +1,16 @@
+
+extends layout
+
+block content
+    h2= title 
+    if group_list.length
+       ul
+       each group in group_list
+          li
+            article.card
+              header 
+                 a(href=group.url) #{group.group_name}
+              footer 
+              |  (#{group.description})
+    else
+      p 现在还没有兴趣圈哦

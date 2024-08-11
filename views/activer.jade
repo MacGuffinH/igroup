@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 活跃成员（根据发帖时间排序）
+  p #{description}  
+  if activer_list.length
+    ul
+      each activer in activer_list
+        li
+          |   #{activer.name}
+
+  else
+    p 好冷清的圈子喵，快去发帖吧~

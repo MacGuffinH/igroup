@@ -1,0 +1,23 @@
+
+extends layout
+
+block content
+  h2= title
+  article.card
+    header
+      p 发帖人:#{name}
+    footer
+      p #{content}
+  if reply_list.length
+   ul
+      each reply in reply_list
+        li
+          article.card 
+            header
+              p #{reply}
+  else
+    p 没有回复喵 
+  form(method="POST").card
+    label(for='reply') 评论:
+    textarea#reply.form-control(placeholder='评论' name='reply' )= undefined===post ? '' : post.reply  
+    button.btn.btn-primary(type='submit') 提交

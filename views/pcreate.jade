@@ -1,0 +1,17 @@
+
+extends layout
+
+block content
+  h2 #{title}  
+  form(method="POST")
+    div.form-post 
+      label(for="title") 标题： 
+      input#title.form-control(type='text', placeholder='标题' name='title' required value=(undefined===post ? '' : post.title) )
+      br
+      label(for='content') 详情:
+      textarea#content.form-control(placeholder='详情' name='content' required)= undefined===post ? '' : post.content 
+      button.btn.btn-primary(type='submit') 提交
+      br
+  //- form(method="POST" ,enctype="multipart/form-data")
+  //-   label(for="photo") 图片（可选）:
+  //-   input(type="file", id="photo", name="photo", accept="image/*")

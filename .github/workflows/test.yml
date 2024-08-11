@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: node --version
-    - run: npm dev start
+    - run: npm run devstart

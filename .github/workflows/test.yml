@@ -1,5 +1,7 @@
-name:test
-on:push
+name: test
+
+on: push
+
 jobs:
   job1:
     runs-on: windows-latest

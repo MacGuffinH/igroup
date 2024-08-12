@@ -1,8 +1,8 @@
 name: test
 
 on: push
-- name: MongoDB in GitHub Actions
-  uses: supercharge/mongodb-github-action@1.11.0
+
+ 
             
             
 jobs:
@@ -10,5 +10,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
+    - uses: supercharge/mongodb-github-action@1.11.0
     - run: node --version
     - run: npm run devstart

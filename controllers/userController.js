@@ -5,10 +5,13 @@ const asyncHandler = require("express-async-handler");
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 exports.login_get=asyncHandler(async(req,res,next)=>{
+    if(req.cookies.loggedIn){
+        res.send("你不是已经登录了嘛");
+    }else{
     res.render("login",{
         title:"登录",
         username:req.cookies.loggedIn?req.cookies.username:"旅行者"
-    });
+    });}
 })
 exports.login_post=asyncHandler(async (req, res,next) => {
     const id=req.body.id;

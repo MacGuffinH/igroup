@@ -1,7 +1,10 @@
 name: test
 
 on: push
-
+- name: MongoDB in GitHub Actions
+  uses: supercharge/mongodb-github-action@1.11.0
+            
+            
 jobs:
   job1:
     runs-on: windows-latest

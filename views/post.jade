@@ -8,6 +8,9 @@ block content
       p 发帖人:#{name}
     footer
       p #{content}
+      if image
+        img(src=`data:${image.contentType};base64,${base64}`, alt='图片')
+        //- img(src={`data:${image.contentType};base64,${base64}`},alt="图片")
   if reply_list.length
    ul
       each reply in reply_list

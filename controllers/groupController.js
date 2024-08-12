@@ -19,6 +19,7 @@ function uniquePreserveOrder(array) {
 exports.index=asyncHandler(async(req,res,next)=>{
     const allgroups=await Group.find({},"group_name description").exec();
     //await User.deleteMany({});
+    // await Post.deleteMany({});
     const user=new User({id:2,name:"测试人2",password:"2"});
     await user.save();
     let username;

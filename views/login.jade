@@ -1,12 +1,10 @@
 extends layout
 
 block content
-  h2 #{title}  
-  form(method="POST")
-    div.form-group 
-      label(for="id") id： 
-      input#id.form-control(type='text', placeholder='注意是id不是名字哦' name='id' required value=(undefined===user ? '' : user.id) )
-      br
-      label(for='password') 密码:
-      input#password.form-control(type='password',placeholder='密码' name='password' required value = (undefined===user ? '' : '*')) 
-      button.btn.btn-primary(type='submit') 提交
+  form.login(method="POST")
+    div.third
+      h2(style="text-align:center;") #{title} 
+      input.stack(type='text', placeholder='注意是id不是名字哦' name='id' required value=(undefined===user ? '' : user.id) )
+      input.stack(type='password',placeholder='密码' name='password' required value = (undefined===user ? '' : '*')) 
+      button.stack.icon-paper-plane(type='submit',style="text-align:center;") 提交
+  div(style="height:50px")

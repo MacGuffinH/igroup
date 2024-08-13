@@ -2,15 +2,16 @@
 extends layout
 
 block content
-  h2 #{title}  
+  h2(style="position:relative;left:40px") #{title}  
   form(method="POST",enctype="multipart/form-data")
-    div.form-post 
-      label(for="title") 标题： 
+    div.third(style="width:400px;") 
+      label(for="title") 标题：
       input#title.form-control(type='text', placeholder='标题' name='title' required value=(undefined===post ? '' : post.title) )
       br
-      label(for='content') 详情:
+      label(for="content") 详情
       textarea#content.form-control(placeholder='详情' name='content' required)= undefined===post ? '' : post.content 
       br
-      label(for="photo") 图片（可选）:
-      input(type="file", id="photo", name="photo", accept="image/*")
+      div(style="width: 200px;") <!-- this div just for demo display -->
+        label.dropimage(for="photo") 图片（可选）:
+        input(type="file", title="Drop image or click me",id="photo", name="photo", accept="image/*")
       button.btn.btn-primary(type='submit') 提交

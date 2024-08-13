@@ -3,26 +3,24 @@ html(lang="zh-CN")
   head
     //link(rel="stylesheet",href="stylesheets/style.css")
     link(rel="stylesheet",href="https://cdn.jsdelivr.net/npm/picnic")
+    link(rel="stylesheet",href="/public/stylesheets/style.css")
     meta(charset="utf-8")
     title mg's 兴趣圈(测试版)
   body
     div(style="overflow: hidden;height: 250px;")
-      nav
-        ul
-         li
-            a(href="/")
-             button 主页
-         li
-            a(href="/login")
-             button 登录
-          li
-            a(href="/group/create")
-              button 创建新圈
+      nav.demo
+        a.brand(href="/")
+             span 主页
+        label(for="bmenub", class="burger pseudo button") 菜单
+
+        div.menu
+          a.button(href="/login") 登录
+          a.button(href="/group/create") 创建新圈
     header.card
       h1 mg's 兴趣圈
     main
       article.card
-        p 欢迎来到兴趣圈！#{username}
+        p(style="text-align:center;") 欢迎来到兴趣圈！#{username}
         block content
     footer
       p made by MacGuffin

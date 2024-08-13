@@ -2,11 +2,13 @@ extends layout
 
 block content
   h2 #{title}
-  p #{description}
-  a(href=group_url+"/post/create")
-      button 发帖
-  a(href=group_url+"/recentusers")
-      button 活跃成员
+  div(style="position:relative;left:40px")
+    p #{description}
+    a(href=group_url+"/post/create")
+        button 发帖
+    br
+    a(href=group_url+"/recentusers")
+        button 活跃成员
   if allposts.length
     ul
       each post in allposts
@@ -14,7 +16,7 @@ block content
           article.card
             header 
               a(href=post.url) #{post.title}
-            footer 
+            footer
             |  #{post.content}
 
   else

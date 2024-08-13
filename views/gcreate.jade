@@ -4,7 +4,7 @@ extends layout
 block content
   h2 #{title}  
   form(method="POST")
-    div.form-group 
+    div.third 
       label(for="name") 圈名： 
       input#name.form-control(type='text', placeholder='输入您兴趣圈的圈名吧' name='name' required value=(undefined===group ? '' : group.name) )
       br
